@@ -6,4 +6,12 @@ build:
   commands:
   - go get
   - go build
-  - go test
+  - go test ./pkg/service
+
+compose:
+  redis:
+    image: redis
+    ports:
+    - 6379
+    links:
+    - redis
